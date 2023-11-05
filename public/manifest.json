@@ -1,0 +1,16 @@
+{
+    "name": "WorkTimer",
+    "description": "Track your time for efficient work",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "index.html",
+        "default_title": "WorkTimer - @Enze"
+    },
+    "icons": {
+        "16": "timer.png",
+        "48": "timer.png",
+        "128": "timer.png"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
