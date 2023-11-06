@@ -1,6 +1,6 @@
 {
     "name": "WorkTimer",
-    "description": "Boost your focus and productivity by providing a customizable, distraction-free countdown. Set your goal, start the timer, and stay on track with a gentle sound alert when it's time to take a break or move on to your next task.",
+    "description": "Enhance focus with a tailored, serene countdown timer for productivity & alerts for breaks/tasks.",
     "version": "0.1.0",
     "manifest_version": 3,
     "action": {
