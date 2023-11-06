@@ -15,10 +15,9 @@
 </p>
 
 ## :mag_right: Preview
-
-![image](https://github.com/EnzeGH/WorkTimer/assets/149831955/636bf83f-ec93-44b6-b26c-c89a4c2b78f8)
-![image](https://github.com/EnzeGH/WorkTimer/assets/149831955/19821fde-d92f-462b-831a-bb27b93014e6)
-![image](https://github.com/EnzeGH/WorkTimer/assets/149831955/84c5a3f6-1cc6-461f-b037-8f89f1f5dc46)
+![image](https://github.com/EnzeGH/WorkTimer/assets/149831955/5551352e-b3f4-434a-acd0-27007ff213c0)
+![image](https://github.com/EnzeGH/WorkTimer/assets/149831955/51009829-3449-4e1d-9af3-22251e6ea830)
+![image](https://github.com/EnzeGH/WorkTimer/assets/149831955/61e10734-91ff-4da5-9e7e-449f4ecf612d)
 
 ## :rocket: Features
 
