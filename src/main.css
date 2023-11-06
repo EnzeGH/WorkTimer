@@ -9,3 +9,9 @@
         margin: 0;
     }
 }
+
+@layer components {
+    .text-link {
+        @apply text-blue-500 hover:underline underline-offset-4 hover:text-blue-600 duration-200;
+    }
+}

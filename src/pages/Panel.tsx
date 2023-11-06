@@ -20,6 +20,7 @@ import StartButton from '../components/buttons/StartButton';
 import PauseButton from '../components/buttons/PauseButton';
 import ResetButton from '../components/buttons/ResetButton';
 import Confetti from '../components/Confetti';
+import Copyright from '../components/Copyright';
 
 export default function Panel() {
     const [playVolume, setPlayVolume] = useState(true);
@@ -177,6 +178,8 @@ export default function Panel() {
                     <ResetButton />
                 </ActionContext.Provider>
             </div>
+
+            <Copyright />
         </div>
     );
 }
