@@ -22,12 +22,24 @@ import ResetButton from '../components/buttons/ResetButton';
 import Confetti from '../components/Confetti';
 
 export default function Panel() {
+    const [playVolume, setPlayVolume] = useState(true);
     const [isRunning, setIsRunning] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
     const [isFinished, setIsFinished] = useState(false);
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(25);
     const [seconds, setSeconds] = useState(0);
+
+    /**
+     * This function will play the audio file
+     * that is used to notify the user that
+     * the timer has finished.
+     */
+    const playAudio = () => {
+        const audio = new Audio('audio.mp3');
+        audio.volume = 0.1;
+        audio.play();
+    };
 
     /**
      * Handles the start of the timer.
@@ -78,6 +90,7 @@ export default function Panel() {
      * which will cause the timer to stop.
      */
     const handleFinish = () => {
+        if (playVolume) playAudio();
         setIsRunning(false);
         setIsPaused(false);
         setIsFinished(true);
@@ -136,7 +149,7 @@ export default function Panel() {
 
     return (
         <div className="min-w-[500px] max-w-sm mx-auto flex flex-col items-center justify-center p-10">
-            <Heading title="WorkTimer" version="1.0.0-alpha.1" />
+            <Heading title="WorkTimer" playVolume={playVolume} setPlayVolume={setPlayVolume} />
 
             <div className="flex flex-col gap-1 w-full text-center mb-3">
                 <label htmlFor="time" className="text-sm font-medium">

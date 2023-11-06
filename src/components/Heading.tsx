@@ -11,18 +11,28 @@ import { Fragment } from 'react';
 
 interface HeadingProps {
     title: string;
-    version: string;
+    playVolume: boolean;
+    setPlayVolume: (value: boolean) => void;
 }
 
-export default function Heading({ title, version }: HeadingProps): JSX.Element {
+export default function Heading({ title, playVolume, setPlayVolume }: HeadingProps): JSX.Element {
     return (
         <Fragment>
             <img src="/timer.png" alt="Clock Icon" className="w-[45px] h-[45px]" />
             <h1 className="text-2xl font-bold mb-5 flex flex-col items-center">
                 {title}
-                <span className="bg-gray-200 text-gray-500 rounded-full px-2 text-xs font-medium lowercase">
-                    v{version}
-                </span>
+                <div className="flex items-center gap-2 text-sm -mt-1">
+                    <label className="relative flex justify-between items-center group p-2 gap-2">
+                        <input
+                            checked={playVolume}
+                            onChange={() => setPlayVolume(!playVolume)}
+                            type="checkbox"
+                            className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md"
+                        />
+                        <span className="w-8 h-4 flex items-center flex-shrink-0 py-1 bg-gray-300 rounded-full duration-300 ease-in-out peer-checked:bg-green-600 after:w-4 after:h-4 after:bg-white after:border after:border-black after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-4"></span>
+                        <span className="tracking-tighter">Play audio on finish? 🎉</span>
+                    </label>
+                </div>
             </h1>
         </Fragment>
     );
