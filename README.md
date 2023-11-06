@@ -8,8 +8,7 @@
 <br />
 
 <p align="center">
-  <a href="#" target="__blank"><img src="https://img.shields.io/github/v/tag/EnzeGH/WorkTimer?label=latest&color=blue" alt="GitHub Latest Tag"></a>
-  <a href="https://dev.enze.cz/previews/enzeboard" target="__blank"><img src="https://img.shields.io/badge/Demo-Preview-purple" alt="View a demo of this Dashboard"></a>
+  <a href="#" target="__blank"><img src="https://img.shields.io/github/v/tag/EnzeGH/WorkTimer?label=latest&color=red" alt="GitHub Latest Tag"></a>
   <a href="https://github.com/EnzeGH/WorkTimer/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a>
   <a href="https://github.com/EnzeGH/WorkTimer/archive/main.zip" target="__blank"><img src="https://img.shields.io/badge/Download-ZIP-blue" alt="Download source code"></a>
   <a href="https://github.com/EnzeGH/WorkTimer" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/EnzeGH/Enzeboard?style=social"></a>
