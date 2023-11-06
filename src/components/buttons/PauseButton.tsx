@@ -1,3 +1,12 @@
+/**
+ * This component is part of the buttons group in the Action Bar.
+ * It is used to pause the current timer and is disabled when the timer
+ * is not running and also when the timer is already paused.
+ *
+ * @author Enze Development <enzecs@proton.me>
+ * @since 1.0.0-alpha.1
+ */
+
 import { useContext } from 'react';
 import { ActionContext } from '../../contexts/ActionContext';
 import { BsPauseFill } from 'react-icons/bs';

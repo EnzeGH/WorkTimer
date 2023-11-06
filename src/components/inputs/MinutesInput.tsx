@@ -1,3 +1,12 @@
+/**
+ * This component is part of the inputs group in the Action Bar.
+ * It is used to set the minutes of the current timer. It is also
+ * automatically updated when the timer is running.
+ *
+ * @author Enze Development <enzecs@proton.me>
+ * @since 1.0.0-alpha.1
+ */
+
 import { useContext } from 'react';
 import { TimeContext } from '../../contexts/TimeContext';
 import classNames from 'classnames';

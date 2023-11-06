@@ -1,3 +1,12 @@
+/**
+ * This component is part of the buttons group in the Action Bar.
+ * It is used to reset the current timer and is disabled when the timer
+ * is not running.
+ *
+ * @author Enze Development <enzecs@proton.me>
+ * @since 1.0.0-alpha.1
+ */
+
 import { ActionContext } from '../../contexts/ActionContext';
 import { BsRepeat } from 'react-icons/bs';
 import { useContext } from 'react';

@@ -2,6 +2,9 @@
  * This component renders the footer of the page.
  * It contains the credits for all resources used
  * in this project.
+ *
+ * @author Enze Development <enzecs@proton.me>
+ * @since 1.0.0-alpha.1
  */
 
 export default function Copyright() {
