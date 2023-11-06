@@ -52,9 +52,9 @@ npm run dev
 
 I welcome ideas for new features! Feel free to add a [feature request](https://github.com/EnzeGH/WorkTimer/issues/new?assignees=&labels=enhancement&projects=&template=💡-feature-request.md&title=%5BFEATURE%5D) and it will be considered for future releases.
 
-## Bugs and feature requests
+## Reporting bugs
 
-Found a bug or have a feature request? [Please open a new issue](<[https://github.com/EnzeGH/WorkTimer/issues/ne](https://github.com/EnzeGH/WorkTimer/issues/new?assignees=&labels=bug&projects=&template=🐞-bug-report.md&title=%5BBUG%5D)https://github.com/EnzeGH/WorkTimer/issues/new?assignees=&labels=bug&projects=&template=🐞-bug-report.md&title=%5BBUG%5D>).
+Please report any bugs you find [here](https://github.com/EnzeGH/WorkTimer/issues/new?assignees=&labels=bug&projects=&template=🐞-bug-report.md&title=%5BBUG%5D).
 
 ## License
 
