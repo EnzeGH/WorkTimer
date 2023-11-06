@@ -12,15 +12,23 @@ export default function Copyright() {
             <div className="flex flex-row items-center justfiy-between gap-2">
                 <span>&copy; {currentYear} Enze</span>
                 <span className="w-1 h-4 border-l border-gray-300"></span>
-                <a className="text-link" href="https://github.com/EnzeGH/WorkTimer">
+                <a className="text-link" href="https://github.com/EnzeGH/WorkTimer" target="_blank">
                     GitHub
                 </a>
                 &bull;
-                <a className="text-link" href="https://iconscout.com/contributors/superndre">
+                <a
+                    className="text-link"
+                    href="https://iconscout.com/contributors/superndre"
+                    target="_blank"
+                >
                     Timer Icon
                 </a>
                 &bull;
-                <a className="text-link" href="https://www.youtube.com/watch?v=adoemk6ZjNo">
+                <a
+                    className="text-link"
+                    href="https://www.youtube.com/watch?v=adoemk6ZjNo"
+                    target="_blank"
+                >
                     Used audio
                 </a>
             </div>
