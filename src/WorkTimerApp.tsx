@@ -8,28 +8,28 @@
  */
 
 import { useEffect, useState } from 'react';
-import { TimeContext } from '../contexts/TimeContext';
-import { ActionContext } from '../contexts/ActionContext';
+import { TimeContext } from './contexts/TimeContext';
+import { ActionContext } from './contexts/ActionContext';
 
 /* Components Imports */
-import Heading from '../components/Heading';
-import HoursInput from '../components/inputs/HoursInput';
-import MinutesInput from '../components/inputs/MinutesInput';
-import SecondsInput from '../components/inputs/SecondsInput';
-import StartButton from '../components/buttons/StartButton';
-import PauseButton from '../components/buttons/PauseButton';
-import ResetButton from '../components/buttons/ResetButton';
-import Confetti from '../components/Confetti';
-import Copyright from '../components/Copyright';
+import Heading from './components/Heading';
+import HoursInput from './components/inputs/HoursInput';
+import MinutesInput from './components/inputs/MinutesInput';
+import SecondsInput from './components/inputs/SecondsInput';
+import StartButton from './components/buttons/StartButton';
+import PauseButton from './components/buttons/PauseButton';
+import ResetButton from './components/buttons/ResetButton';
+import Confetti from './components/Confetti';
+import Copyright from './components/Copyright';
 
-export default function Panel() {
-    const [playVolume, setPlayVolume] = useState(true);
-    const [isRunning, setIsRunning] = useState(false);
-    const [isPaused, setIsPaused] = useState(false);
-    const [isFinished, setIsFinished] = useState(false);
-    const [hours, setHours] = useState(0);
-    const [minutes, setMinutes] = useState(25);
-    const [seconds, setSeconds] = useState(0);
+export default function WorkTimerApp() {
+    const [playVolume, setPlayVolume] = useState<boolean>(true);
+    const [isRunning, setIsRunning] = useState<boolean>(false);
+    const [isPaused, setIsPaused] = useState<boolean>(false);
+    const [isFinished, setIsFinished] = useState<boolean>(false);
+    const [hours, setHours] = useState<number>(0);
+    const [minutes, setMinutes] = useState<number>(25);
+    const [seconds, setSeconds] = useState<number>(0);
 
     /**
      * This function will play the audio file
@@ -53,6 +53,20 @@ export default function Panel() {
         setIsRunning(true);
         setIsPaused(false);
         setIsFinished(false);
+
+        chrome.storage.local.set({
+            bools: {
+                isRunning: true,
+                isPaused: false,
+                isFinished: false,
+                playVolume: playVolume,
+            },
+            timer: {
+                hours: Number(hours),
+                minutes: Number(minutes),
+                seconds: Number(seconds),
+            },
+        });
     };
 
     /**
@@ -66,6 +80,12 @@ export default function Panel() {
         setIsRunning(false);
         setIsPaused(true);
         setIsFinished(false);
+
+        chrome.storage.local.set({
+            isRunning: false,
+            isPaused: true,
+            isFinished: false,
+        });
     };
 
     /**
@@ -82,6 +102,20 @@ export default function Panel() {
         setHours(0);
         setMinutes(25);
         setSeconds(0);
+
+        chrome.storage.local.set({
+            bools: {
+                isRunning: false,
+                isPaused: false,
+                isFinished: false,
+                playVolume: playVolume,
+            },
+            timer: {
+                hours: 0,
+                minutes: 25,
+                seconds: 0,
+            },
+        });
     };
 
     /**
@@ -95,6 +129,15 @@ export default function Panel() {
         setIsRunning(false);
         setIsPaused(false);
         setIsFinished(true);
+
+        chrome.storage.local.set({
+            bools: {
+                isRunning: false,
+                isPaused: false,
+                isFinished: true,
+                playVolume: playVolume,
+            },
+        });
     };
 
     /**
@@ -108,6 +151,22 @@ export default function Panel() {
      * changed.
      */
     useEffect(() => {
+        // If the background script has set the timer, use that
+        if (chrome.storage) {
+            chrome.storage.local.get(['timer', 'bools'], (result) => {
+                if (result.bools.isRunning && result.timer) {
+                    setHours(result.timer.hours);
+                    setMinutes(result.timer.minutes);
+                    setSeconds(result.timer.seconds);
+
+                    setIsFinished(result.bools.isFinished);
+                    setIsPaused(result.bools.isPaused);
+                    setIsRunning(result.bools.isRunning);
+                    setPlayVolume(result.bools.playVolume);
+                }
+            });
+        }
+
         let timerId: NodeJS.Timeout;
         if (isRunning && !isPaused) {
             if (seconds > 0) {

@@ -8,4 +8,15 @@ export default defineConfig({
         host: 'localhost',
         port: 4200,
     },
+    build: {
+        rollupOptions: {
+            input: {
+                main: 'index.html',
+                background: 'src/services/Background.ts',
+            },
+            output: {
+                entryFileNames: `[name].js`,
+            },
+        },
+    },
 });

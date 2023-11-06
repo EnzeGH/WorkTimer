@@ -7,6 +7,9 @@
         "default_popup": "index.html",
         "default_title": "WorkTimer - @Enze"
     },
+    "background": {
+        "service_worker": "background.js"
+    },
     "icons": {
         "16": "timer.png",
         "48": "timer.png",
@@ -14,5 +17,13 @@
     },
     "content_security_policy": {
         "extension_pages": "script-src 'self'; object-src 'self'"
-    }
+    },
+    "permissions": ["alarms", "storage", "scripting", "tabs"],
+    "host_permissions": ["<all_urls>"],
+    "web_accessible_resources": [
+        {
+            "resources": ["audio.mp3"],
+            "matches": ["<all_urls>"]
+        }
+    ]
 }

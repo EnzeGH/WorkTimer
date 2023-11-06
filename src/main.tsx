@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom/client';
 import './main.css';
 
 /* Pages */
-import Panel from './pages/Panel';
+import WorkTimerApp from './WorkTimerApp';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <Panel />
+        <WorkTimerApp />
     </React.StrictMode>
 );
