@@ -82,9 +82,23 @@ export default function WorkTimerApp() {
         setIsFinished(false);
 
         chrome.storage.local.set({
-            isRunning: false,
-            isPaused: true,
-            isFinished: false,
+            bools: {
+                isRunning: false,
+                isPaused: true,
+                isFinished: false,
+                playVolume: playVolume,
+            },
+            timer: {
+                hours:
+                    Number(chrome.storage.local.get(['timer'], (result) => result.timer.hours)) ||
+                    hours,
+                minutes:
+                    Number(chrome.storage.local.get(['timer'], (result) => result.timer.minutes)) ||
+                    minutes,
+                seconds:
+                    Number(chrome.storage.local.get(['timer'], (result) => result.timer.seconds)) ||
+                    seconds,
+            },
         });
     };
 
@@ -154,7 +168,7 @@ export default function WorkTimerApp() {
         // If the background script has set the timer, use that
         if (chrome.storage) {
             chrome.storage.local.get(['timer', 'bools'], (result) => {
-                if (result.bools.isRunning && result.timer) {
+                if (result.timer && (result.bools.isRunning || result.bools.isPaused)) {
                     setHours(result.timer.hours);
                     setMinutes(result.timer.minutes);
                     setSeconds(result.timer.seconds);

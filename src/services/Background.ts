@@ -5,6 +5,7 @@ chrome.alarms.create('workTimer', { periodInMinutes: 1 / 60 });
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === 'workTimer') {
         chrome.storage.local.get(['timer', 'bools'], (result) => {
+            console.log(result);
             if (result.bools.isRunning) {
                 countdown();
             }
